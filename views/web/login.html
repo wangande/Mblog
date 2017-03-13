@@ -1,0 +1,43 @@
+<%- include header %>
+<div class="container">
+    <div class="userBox login">
+        <div class="head">
+            登录
+        </div>
+        <div class="body">
+            <div>
+                <input type="text" name="username" placeholder="用户名">
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="密码"><br>
+            </div>
+            <div class="btn-primary submit cursor-pointer">
+                 登录
+            </div>
+            <div class="changeRegister cursor-pointer">点击注册</div>
+            <div class="loginMsg"></div>
+        </div>
+    </div>
+    <div class="userBox register" style="display: none">
+        <div class="head">
+            注册
+        </div>
+        <div class="body">
+            <div>
+                <input type="text" name="username" placeholder="用户名">
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="密码"><br>
+            </div>
+            <div>
+                <input type="password" name="password2" placeholder="确认密码"><br>
+            </div>
+            <div class="btn-primary submit cursor-pointer ">
+                 注册
+            </div>
+            <div class="changeLogin cursor-pointer">已有帐号，登录</div>
+            <div class="registerMsg"></div>
+        </div>
+    </div>
+</div>
+<%- include footer %>

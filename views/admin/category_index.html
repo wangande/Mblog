@@ -1,0 +1,27 @@
+<%- include header %>
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li class="active">分类列表</li>
+</ol>
+<h3>分类列表</h3>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>操作</th>
+    </tr>
+    <% categories.forEach(function(category){ %>
+    <tr>
+        <td><%= category._id %></td>
+        <td><%= category.name %></td>
+        <td>
+            <a href="/admin/category/edit?id=<%= category._id %>">编辑</a> |
+            <a href="/admin/category/delete?id=<%= category._id %>">删除</a>
+        </td>
+    </tr>
+    <% }) %>
+</table>
+
+<%- include page %>
+
+<%- include footer %>

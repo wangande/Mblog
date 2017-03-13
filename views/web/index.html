@@ -1,0 +1,38 @@
+<%- include header %>
+<div class="container">
+    <% contents.forEach(function(content){ %>
+    <div class="jumbotron">
+        <h2 class="text-center"><%= content.title %></h2>
+        <p class="text-center">
+            作者：<span class="text-warning"><%= content.user.username %></span>
+            时间：<span class="text-info"><%= content.addTime %></span>
+            阅读：<span class="text-success"><%= content.views %></span>
+            评论：<span class="text-success">10</span>
+        </p>
+        <dfn><p><%= content.description %></p></dfn>
+        <p><a class="btn btn-primary btn-lg" href="/view?contentId=<%= content._id %>&category=<%= content.category._id %>"
+              role="button">阅读全文</a></p>
+    </div>
+    <% }) %>
+
+    <nav aria-label="...">
+    <ul class="pager">
+        <% if (page <= 1) { %>
+        <li class="previous"><span aria-hidden="true">没有上一页</span></li>
+        <% } else { %>
+        <li class="previous"><a href="/?page=<%= page-1 %>"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+        <% } %>
+        <li>
+            <%= page %>/<%= pages %>
+        </li>
+        <% if (page >= pages) { %>
+        <li class="next"><span aria-hidden="true">没有下一页</span></li>
+        <% } else { %>
+        <li class="next"><a href="/?page=<%= page+1 %>">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+        <% } %>
+
+    </ul>
+</nav>
+</div>
+
+<%- include footer %>
